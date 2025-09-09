@@ -7,7 +7,7 @@ services:
   # The database is exposed on port 3306
   # The data is persisted in a Docker volume
   mysql:
-    image: mysql:8.0      # Use the official MySQL 8.0 image
+    image: mysql:5.7      # Use the official MySQL 8.0 image
     container_name: mysql_container
     restart: always
     environment:
