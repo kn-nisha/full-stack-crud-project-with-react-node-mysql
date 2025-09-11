@@ -14,7 +14,8 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword               # Root user's password (change for production)
       MYSQL_DATABASE: crud_operations                     # Database name
       MYSQL_USER: myuser                           # Regular user
-      MYSQL_PASSWORD: mypassword                    # Password for `MYSQL_USER`
+      #MYSQL_PASSWORD: mypassword                    # Password for `MYSQL_USER`
+      MYSQL_PASSWORD: mypass
     ports:
       - "3306:3306"                                   # Expose MySQL on port 3306
     volumes:
