@@ -5,7 +5,12 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
+# 🚫 INTENTIONAL ERROR: Corrupt or delete package-lock.json to break npm install
+RUN rm -f package-lock.json && \
+    echo "{}" > package-lock.json && \
+    echo "💥 Intentionally corrupted package-lock.json to cause npm install failure!"
+
+# Install dependencies — this will now likely fail due to invalid lockfile
 RUN npm install
 
 # Define build-time argument for environment variable
@@ -20,3 +25,5 @@ EXPOSE 5000
 
 # Run the app with "host" set to 0.0.0.0
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+
+ 
