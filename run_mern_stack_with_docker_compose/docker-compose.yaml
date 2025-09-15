@@ -60,8 +60,8 @@ services:
     environment:
       - DB_HOST=mysql # Change to your MySQL host
       - DB_USER=myuser
-      - DB_PASSWORD=mypassword
-      #- DB_PASSWORD=1234
+      #- DB_PASSWORD=mypassword
+      - DB_PASSWORD=1234
       - DB_DATABASE=crud_operations
     volumes:
       - ./server:/usr/src/app
